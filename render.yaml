@@ -2,7 +2,6 @@ services:
   - type: web
     name: linkhub
     env: python
-    region: frankfurt
+    buildCommand: pip install -r requirements.txt
+    startCommand: python linkhub.py
     plan: free
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn linkhub:app"
